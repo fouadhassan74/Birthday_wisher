@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Test from "./Components/test";
+import Genrate from "./Components/Genrate";
+import Birthday from "./Components/Birthday";
+import Countdown from "./Components/Countdown";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Test />
+      <Routes>
+        <Route path="/" element={<Genrate />} />
+        <Route path="/birthday" element={<Birthday />} />
+      </Routes>
     </div>
   );
 }
